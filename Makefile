@@ -1,5 +1,14 @@
+# pyenvが入ってなかったらinstallする
+setup-pyenv:
+	@echo "Checking if pyenv is available"
+	@if ! command -v pyenv &> /dev/null; then \
+		echo "pyenv is not available. Installing pyenv..."; \
+		curl https://pyenv.run | bash; \
+	fi; 
+
 # pyenv前提のpythonバージョン変更コマンド
-# 起動はsource venv/bin/activate
+# 起動は```source venv/bin/activate```
+# 閉じる時は```deactivate```
 setup-python:
 	@echo "Setting up Python virtual environment"
 	@python_version=$$(python -c 'import sys; print(".".join(map(str, sys.version_info[:3])))'); \
@@ -8,7 +17,7 @@ setup-python:
 		pyenv install 3.11.4; \
 		pyenv local 3.11.4; \
 	fi; \
-	python -m venv venv
+	python -m venv venv;
 
 # テスト実行
 test:

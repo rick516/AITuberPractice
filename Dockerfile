@@ -5,7 +5,7 @@
 
 
 # 使用するベースイメージの指定
-FROM python:3.11.5-slim
+FROM python:3.11.4
 
 # 作業ディレクトリの設定
 WORKDIR /usr/src/app
