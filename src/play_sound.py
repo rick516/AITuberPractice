@@ -2,11 +2,11 @@ import sounddevice as sd
 from typing import TypedDict
 
 class PlaySound:
-    def __init__(self, input_device_id: int = 0, output_device_name: str = "MacBook Proのマイク") -> None:
+    def __init__(self, input_device_id: int = 0, output_device_name: str = "MacBook Proのスピーカー") -> None:
         # インプットは今回使わないのでデフォルト0
         self.input_device_id = input_device_id
         self.output_device_id = self._search_output_device_id(output_device_name)
-        # デデフォルトデバイスの設定
+        # デフォルトデバイスの設定
         sd.default.device = [self.input_device_id, self.output_device_id]
 
     # デバイスIDの検索
