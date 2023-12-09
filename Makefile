@@ -17,7 +17,7 @@ setup-python:
 		pyenv install 3.11.4; \
 		pyenv local 3.11.4; \
 	fi; \
-	python -m venv venv;
+	python3 -m venv venv;
 
 # テスト実行
 test:
