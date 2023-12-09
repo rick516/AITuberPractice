@@ -1,5 +1,0 @@
-> 0 功一郎のAirPods Pro - Find My, Core Audio (1 in, 0 out)
-< 1 功一郎のAirPods Pro - Find My, Core Audio (0 in, 2 out)
-  2 MacBook Proのマイク, Core Audio (1 in, 0 out)
-  3 MacBook Proのスピーカー, Core Audio (0 in, 2 out)
-  4 ZoomAudioDevice, Core Audio (2 in, 2 out)
