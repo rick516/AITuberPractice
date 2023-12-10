@@ -28,14 +28,20 @@ class OpenAIAdapter:
             raise ValueError("Question must not be empty")
         system_message = self._create_message("system", self.system_prompt)
         user_message = self._create_message("user", question)
+        print("ユーザーのメッセージ: " + str(user_message))
         
         messages = [system_message, user_message]
-        
+
         res = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
-            messages=messages
+            messages=messages,
+            max_tokens=125
         )
-        return res.choices[0].message.content
+
+        answer = res.choices[0].message.content
+
+        print("コメント: " + str(answer))
+        return answer
 
 def main():
     adapter = OpenAIAdapter()
