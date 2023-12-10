@@ -1,7 +1,7 @@
 import sounddevice as sd
 from typing import TypedDict
 
-class PlaySound:
+class PlaySoundAdapter:
     def __init__(self, input_device_id: int = 0, output_device_name: str = "功一郎のAirPods Pro", output_device_host_api: int = 0) -> None:
         # インプットは今回使わないのでデフォルト0
         self.input_device_id = input_device_id
@@ -25,6 +25,7 @@ class PlaySound:
         if output_device_id is None:
             print("デバイスが見つかりませんでした。")
 
+        print("output_device_name: " + output_device_name)
         return output_device_id
 
     # 音声を再生
@@ -32,4 +33,5 @@ class PlaySound:
         sd.play(data=data, samplerate=rate)
         # 終了まで待つ
         sd.wait()
+        print("200: 音声を再生しました。")
         return True
