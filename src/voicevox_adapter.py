@@ -24,7 +24,7 @@ class VoivevoxAdapter:
             "Content-Type": "application/json"
         }
         res = requests.post(self.url + "synthesis", params=audio_params, data=json.dumps(query_data), headers=headers)
-        print("status_code:" + str(res.status_code))
+        print(str(res.status_code) + ": 音声を合成しました")
         return res.content
 
     def get_voice(self, text: str, speaker_id: int):

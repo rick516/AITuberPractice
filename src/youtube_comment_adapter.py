@@ -11,6 +11,7 @@ class YoutubeCommentAdapter:
             return None
         
         recent_comment = comments[-1].get("message")
+        print("最新のコメント: " + recent_comment)
         return recent_comment
     
     def __get_comments(self):
@@ -20,7 +21,7 @@ class YoutubeCommentAdapter:
         
         comments = json.loads(self.chat.get().json())
         if (comments == []):
-            print("コメントがありません。")
+            print("最新コメントはありません")
             return None
         
         return comments
